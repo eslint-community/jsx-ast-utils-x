@@ -1,3 +1,5 @@
+import getValue from './index.js';
+
 /**
  * Extractor function for an ObjectExpression type value node. An object
  * expression is using {}.
@@ -6,7 +8,6 @@
  * @returns - A representation of the object
  */
 export default function extractValueFromObjectExpression(value) {
-  const getValue = require('.').default;
   return value.properties.reduce((obj, property) => {
     // Support types: SpreadProperty and ExperimentalSpreadProperty
     if (/^(?:Experimental)?Spread(?:Property|Element)$/.test(property.type)) {

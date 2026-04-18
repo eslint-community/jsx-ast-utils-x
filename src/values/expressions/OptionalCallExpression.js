@@ -1,3 +1,5 @@
+import getValue from './index.js';
+
 /**
  * Extractor function for a OptionalCallExpression type value node. A member
  * expression is accessing a property on an object `obj.property` and invoking
@@ -8,6 +10,5 @@
  *   `obj.property?.()` convention.
  */
 export default function extractValueFromOptionalCallExpression(value) {
-  const getValue = require('.').default;
   return `${getValue(value.callee)}?.(${value.arguments.map(x => getValue(x)).join(', ')})`;
 }

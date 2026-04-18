@@ -1,3 +1,5 @@
+import getValue from './index.js';
+
 /**
  * Extractor function for a TypeCastExpression type value node. A type cast
  * expression looks like `(this.handleClick: (event: MouseEvent) => void))` This
@@ -7,6 +9,5 @@
  * @returns - The extracted value converted to correct type.
  */
 export default function extractValueFromTypeCastExpression(value) {
-  const getValue = require('.').default;
   return getValue(value.expression);
 }

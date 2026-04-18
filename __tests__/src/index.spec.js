@@ -2,9 +2,11 @@
 import assert from 'node:assert';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// eslint-disable-next-line import-x/default -- https://github.com/un-ts/eslint-plugin-import-x/issues/334
-import core from '../../src/index';
+import core from '../../src/index.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const src = fs
   .readdirSync(path.resolve(__dirname, '../../src'))
@@ -20,8 +22,9 @@ describe('main export', () => {
   });
 
   for (const f of src.filter(f => f !== 'index')) {
-    it(`should export ${f}`, () => {
-      assert.equal(core[f], require(path.join('../../src/', f)).default);
+    it(`should export ${f}`, async () => {
+      const mod = await import(new URL(`../../src/${f}.js`, import.meta.url));
+      assert.equal(core[f], mod.default);
     });
 
     it(`should export ${f} from root`, () => {

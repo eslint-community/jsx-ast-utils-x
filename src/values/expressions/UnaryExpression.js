@@ -1,3 +1,5 @@
+import getValue from './index.js';
+
 /**
  * Extractor function for a UnaryExpression type value node. A unary expression
  * is an expression with a unary operator. For example, !"foobar" will evaluate
@@ -7,7 +9,6 @@
  * @returns - The extracted value converted to correct type.
  */
 export default function extractValueFromUnaryExpression(value) {
-  const getValue = require('.').default;
   const { operator, argument } = value;
 
   switch (operator) {

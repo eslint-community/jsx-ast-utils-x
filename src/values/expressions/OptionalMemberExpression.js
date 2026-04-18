@@ -1,3 +1,5 @@
+import getValue from './index.js';
+
 /**
  * Extractor function for a OptionalMemberExpression type value node. A member
  * expression is accessing a property on an object `obj.property`.
@@ -7,6 +9,5 @@
  *   `obj?.property` convention.
  */
 export default function extractValueFromOptionalMemberExpression(value) {
-  const getValue = require('.').default;
   return `${getValue(value.object)}?.${getValue(value.property)}`;
 }

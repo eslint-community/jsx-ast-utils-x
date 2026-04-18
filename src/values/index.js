@@ -1,8 +1,8 @@
-import JSXElement from './JSXElement';
-import JSXFragment from './JSXFragment';
-import JSXText from './JSXText';
-import Literal from './Literal';
-import JSXExpressionContainer, { extractLiteral } from './expressions';
+import JSXElement from './JSXElement.js';
+import JSXFragment from './JSXFragment.js';
+import JSXText from './JSXText.js';
+import Literal from './Literal.js';
+import JSXExpressionContainer, { extractLiteral } from './expressions/index.js';
 
 // Composition map of types to their extractor functions.
 const TYPES = {

@@ -1,3 +1,5 @@
+import getValue from './index.js';
+
 /**
  * Extractor function for a JSXElement type value node.
  *
@@ -6,8 +8,6 @@
  * @param value
  */
 export default function extractValueFromJSXElement(value) {
-  const getValue = require('.').default;
-
   const Tag = value.openingElement.name.name;
   if (value.openingElement.selfClosing) {
     return `<${Tag} />`;

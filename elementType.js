@@ -1,1 +1,1 @@
-module.exports = require('./lib').elementType;
+export { elementType as default } from './src/index.js';

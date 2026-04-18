@@ -1,3 +1,5 @@
+import getValue from './index.js';
+
 /**
  * Extractor function for a BindExpression type value node. A bind expression
  * looks like `::this.foo` This will return `this.foo.bind(this)` as the value
@@ -8,7 +10,6 @@
  * @returns - The extracted value converted to correct type.
  */
 export default function extractValueFromBindExpression(value) {
-  const getValue = require('.').default;
   const callee = getValue(value.callee);
 
   // If value.object === null, the callee must be a MemberExpression.
