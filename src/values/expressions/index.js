@@ -28,6 +28,8 @@ import TypeCastExpression from './TypeCastExpression';
 import UnaryExpression from './UnaryExpression';
 import UpdateExpression from './UpdateExpression';
 
+const noop = () => null;
+
 // Composition map of types to their extractor functions.
 const TYPES = {
   Identifier,
@@ -35,6 +37,9 @@ const TYPES = {
   JSXElement,
   JSXFragment,
   JSXText,
+  // An empty expression container (e.g. `{/* a comment */}`) has no value to
+  // extract; treat it as unresolvable rather than logging a spurious error.
+  JSXEmptyExpression: noop,
   TaggedTemplateExpression,
   TemplateLiteral,
   ArrowFunctionExpression: FunctionExpression,
@@ -61,10 +66,8 @@ const TYPES = {
   AssignmentExpression,
 };
 
-const noop = () => null;
-
 const errorMessage = expression =>
-  `The prop value with an expression type of ${expression} could not be resolved. Please file an issue ( https://github.com/jsx-eslint/jsx-ast-utils/issues/new ) to get this fixed immediately.`;
+  `The prop value with an expression type of ${expression} could not be resolved. Please file an issue ( https://github.com/eslinter/jsx-ast-utils-x/issues/new ) to get this fixed immediately.`;
 
 /**
  * This function maps an AST value node to its correct extractor function for
