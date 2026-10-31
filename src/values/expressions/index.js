@@ -6,7 +6,6 @@ import Literal from '../Literal';
 import ArrayExpression from './ArrayExpression';
 import AssignmentExpression from './AssignmentExpression';
 import BinaryExpression from './BinaryExpression';
-import BindExpression from './BindExpression';
 import CallExpression from './CallExpression';
 import ChainExpression from './ChainExpression';
 import ConditionalExpression from './ConditionalExpression';
@@ -53,7 +52,6 @@ const TYPES = {
   NewExpression,
   UpdateExpression,
   ArrayExpression,
-  BindExpression,
   SpreadElement,
   TypeCastExpression,
   SequenceExpression,
@@ -146,7 +144,6 @@ const LITERAL_TYPES = {
     const extractedVal = TYPES.ArrayExpression.call(undefined, value);
     return extractedVal.filter(val => val !== null);
   },
-  BindExpression: noop,
   SpreadElement: noop,
   TSNonNullExpression: noop,
   TSAsExpression: noop,
