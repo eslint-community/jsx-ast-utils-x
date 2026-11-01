@@ -3,7 +3,6 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// eslint-disable-next-line import-x/default -- https://github.com/un-ts/eslint-plugin-import-x/issues/334
 import core from '../../src/index';
 
 const src = fs

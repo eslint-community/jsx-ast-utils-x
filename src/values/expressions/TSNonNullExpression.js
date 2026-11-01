@@ -1,5 +1,5 @@
-const extractValueFromCallExpression = require('./CallExpression').default;
-const extractValueFromThisExpression = require('./ThisExpression').default;
+import extractValueFromCallExpression from './CallExpression';
+import extractValueFromThisExpression from './ThisExpression';
 
 function navigate(obj, prop, value) {
   if (value.computed) {
