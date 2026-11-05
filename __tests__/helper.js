@@ -85,3 +85,15 @@ export function extractProp(code, prop = 'foo') {
   const { attributes: props } = node;
   return getProp(props, prop);
 }
+
+// Returns the first JSXExpressionContainer child of the element in `code`.
+// Useful for empty expressions (e.g. `{/* comment */}`), which are only valid
+// as children and never as attribute values.
+export function getExpressionContainerChild(code) {
+  const parsedCode = parse(code);
+  const body = parsedCode.program?.body ?? parsedCode.body;
+  const [{ expression }] = body;
+  return expression.children.find(
+    child => child.type === 'JSXExpressionContainer',
+  );
+}

@@ -3,7 +3,12 @@
 import assert from 'node:assert';
 
 import getPropValue from '../../src/getPropValue';
-import { extractProp, changePlugins, setParserName } from '../helper';
+import {
+  extractProp,
+  changePlugins,
+  setParserName,
+  getExpressionContainerChild,
+} from '../helper';
 
 describe('getPropValue', () => {
   beforeEach(() => {
@@ -1205,6 +1210,24 @@ describe('getPropValue', () => {
       const expected = undefined;
       const actual = getPropValue(prop);
       assert.equal(actual, expected);
+    });
+
+    it('should not log an error for an empty expression', () => {
+      const container = getExpressionContainerChild(
+        '<div>\n{/* Hello there */}\n</div>',
+      );
+      const prop = { type: 'JSXAttribute', value: container };
+      const errors = [];
+      const originalError = console.error;
+      console.error = (...args) => errors.push(args);
+      let actual;
+      try {
+        actual = getPropValue(prop);
+      } finally {
+        console.error = originalError;
+      }
+      assert.deepEqual(errors, []);
+      assert.equal(actual, null);
     });
   });
 });

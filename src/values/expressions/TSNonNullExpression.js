@@ -19,7 +19,7 @@ function navigate(obj, prop, value) {
 // eslint-disable-next-line sonarjs/cognitive-complexity
 export default function extractValueFromTSNonNullExpression(value) {
   const errorMessage =
-    'The prop value with an expression type of TSNonNullExpression could not be resolved. Please file an issue ( https://github.com/jsx-eslint/jsx-ast-utils/issues/new ) to get this fixed immediately.';
+    'The prop value with an expression type of TSNonNullExpression could not be resolved. Please file an issue ( https://github.com/eslinter/jsx-ast-utils-x/issues/new ) to get this fixed immediately.';
 
   // it's just the name
   if (value.type === 'Identifier') {
