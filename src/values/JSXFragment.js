@@ -1,3 +1,5 @@
+import getValue from '.';
+
 /**
  * Extractor function for a JSXFragment type value node.
  *
@@ -6,8 +8,6 @@
  * @param value
  */
 export default function extractValueFromJSXFragment(value) {
-  const getValue = require('.').default;
-
   if (value.children.length === 0) {
     return '<></>';
   }

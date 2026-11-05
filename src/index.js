@@ -5,7 +5,7 @@ import getPropValue, { getLiteralPropValue } from './getPropValue';
 import hasProp, { hasAnyProp, hasEveryProp } from './hasProp';
 import propName from './propName';
 
-module.exports = {
+export default {
   hasProp,
   hasAnyProp,
   hasEveryProp,
@@ -15,5 +15,17 @@ module.exports = {
   getProp,
   getPropValue,
   getLiteralPropValue,
+  propName,
+};
+export {
+  elementType,
+  eventHandlers,
+  eventHandlersByType,
+  getLiteralPropValue,
+  getProp,
+  getPropValue,
+  hasAnyProp,
+  hasEveryProp,
+  hasProp,
   propName,
 };
