@@ -65,6 +65,6 @@ const eventHandlersByType = {
   transition: ['onTransitionEnd'],
 };
 
-export default Object.values(eventHandlersByType).flat();
+export default Array.from(new Set(Object.values(eventHandlersByType).flat()));
 
 export { eventHandlersByType };
