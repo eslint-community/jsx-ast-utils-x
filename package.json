@@ -1,6 +1,6 @@
 {
   "name": "jsx-ast-utils-x",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AST utility module for statically analyzing JSX",
   "repository": "git+https://github.com/eslinter/jsx-ast-utils-x.git",
   "author": "Ethan Cohen",
