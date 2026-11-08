@@ -1,1 +1,1 @@
-module.exports = require('./lib').getPropValue;
+export { getPropValue as default } from './src/index.js';

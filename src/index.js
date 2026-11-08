@@ -1,9 +1,9 @@
-import elementType from './elementType';
-import eventHandlers, { eventHandlersByType } from './eventHandlers';
-import getProp from './getProp';
-import getPropValue, { getLiteralPropValue } from './getPropValue';
-import hasProp, { hasAnyProp, hasEveryProp } from './hasProp';
-import propName from './propName';
+import elementType from './elementType.js';
+import eventHandlers, { eventHandlersByType } from './eventHandlers.js';
+import getProp from './getProp.js';
+import getPropValue, { getLiteralPropValue } from './getPropValue.js';
+import hasProp, { hasAnyProp, hasEveryProp } from './hasProp.js';
+import propName from './propName.js';
 
 export default {
   hasProp,

@@ -1,1 +1,1 @@
-module.exports = require('./lib').eventHandlers;
+export { eventHandlers as default } from './src/index.js';

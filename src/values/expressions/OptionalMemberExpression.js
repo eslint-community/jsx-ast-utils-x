@@ -1,4 +1,4 @@
-import getValue from '.';
+import getValue from './index.js';
 
 /**
  * Extractor function for a OptionalMemberExpression type value node. A member

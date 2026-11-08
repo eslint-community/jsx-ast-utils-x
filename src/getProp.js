@@ -1,4 +1,4 @@
-import propName from './propName';
+import propName from './propName.js';
 
 const DEFAULT_OPTIONS = {
   ignoreCase: true,

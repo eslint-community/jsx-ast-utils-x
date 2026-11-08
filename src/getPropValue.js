@@ -1,4 +1,4 @@
-import getValue, { getLiteralValue } from './values';
+import getValue, { getLiteralValue } from './values/index.js';
 
 const extractValue = (attribute, extractor) => {
   if (attribute && attribute.type === 'JSXAttribute') {
