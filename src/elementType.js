@@ -1,4 +1,4 @@
-function resolveMemberExpressions(object = {}, property = {}) {
+function resolveMemberExpressions(object, property) {
   if (object.type === 'JSXMemberExpression') {
     return `${resolveMemberExpressions(object.object, object.property)}.${property.name}`;
   }
@@ -11,19 +11,15 @@ function resolveMemberExpressions(object = {}, property = {}) {
  *
  * @param node
  */
-export default function elementType(node = {}) {
-  const { name } = node;
-
+export default function elementType(node) {
   if (node.type === 'JSXOpeningFragment') {
     return '<>';
   }
 
-  if (!name) {
-    throw new Error('The argument provided is not a JSXElement node.');
-  }
+  const { name } = node;
 
   if (name.type === 'JSXMemberExpression') {
-    const { object = {}, property = {} } = name;
+    const { object, property } = name;
     return resolveMemberExpressions(object, property);
   }
 
@@ -31,5 +27,5 @@ export default function elementType(node = {}) {
     return `${name.namespace.name}:${name.name.name}`;
   }
 
-  return node.name.name;
+  return name.name;
 }
