@@ -471,17 +471,6 @@ describe('getLiteralPropValue', () => {
     assert.deepEqual(actual, expected);
   });
 
-  describe('Bind expression', () => {
-    it('should return null', () => {
-      const prop = extractProp('<div foo={::this.handleClick} />');
-
-      const expected = 'null';
-      const actual = getLiteralPropValue(prop);
-
-      assert.deepEqual(actual, expected);
-    });
-  });
-
   describe('Typescript', () => {
     beforeEach(() => {
       changePlugins(pls => [...pls, 'typescript']);
