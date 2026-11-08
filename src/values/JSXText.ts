@@ -1,3 +1,5 @@
+import type { JSXText } from 'estree-jsx';
+
 /**
  * Extractor function for a JSXText type value node.
  *
@@ -5,6 +7,6 @@
  *
  * @param value
  */
-export default function extractValueFromJSXText(value) {
+export default function extractValueFromJSXText(value: JSXText): string {
   return value.raw;
 }

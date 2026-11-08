@@ -9,6 +9,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn --immutable
+
+      - name: TypeScript
+        run: yarn run typecheck
+
   ci:
     name: Lint and Test with Node.js ${{ matrix.node }} on ${{ matrix.os }}
     strategy:

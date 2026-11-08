@@ -4,6 +4,6 @@
  *
  * @returns - 'this' as a string.
  */
-export default function extractValueFromThisExpression() {
+export default function extractValueFromThisExpression(): string {
   return 'this';
 }
