@@ -24,7 +24,7 @@
     "jsx-ast-utils"
   ],
   "scripts": {
-    "build": "premove lib && babel src --out-dir lib",
+    "build": "premove lib && babel src --out-dir lib --extensions .js,.ts",
     "format": "prettier --write .",
     "lint": "eslint .",
     "prepare": "simple-git-hooks && yarn-berry-deduplicate || exit 0",
