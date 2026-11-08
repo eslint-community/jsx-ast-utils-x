@@ -4,6 +4,6 @@
  *
  * @returns - An empty object.
  */
-export default function extractValueFromNewExpression() {
+export default function extractValueFromNewExpression(): object {
   return new Object();
 }
