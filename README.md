@@ -78,11 +78,9 @@ This is a utility module to evaluate AST objects for JSX syntax. This can be sup
 
 ```js
 import { hasProp } from 'jsx-ast-utils-x';
-// OR: var hasProp = require('jsx-ast-utils-x').hasProp;
-// OR: const hasProp = require('jsx-ast-utils-x/hasProp');
 // OR: import hasProp from 'jsx-ast-utils-x/hasProp';
 
-module.exports = context => ({
+export default context => ({
   JSXOpeningElement: node => {
     const onChange = hasProp(node.attributes, 'onChange');
 

@@ -1,4 +1,4 @@
-import extractValueFromTemplateLiteral from './TemplateLiteral';
+import extractValueFromTemplateLiteral from './TemplateLiteral.js';
 
 /**
  * Returns the string value of a tagged template literal object. Redirects the

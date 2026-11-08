@@ -1,1 +1,1 @@
-module.exports = require('./lib').propName;
+export { propName as default } from './src/index.js';

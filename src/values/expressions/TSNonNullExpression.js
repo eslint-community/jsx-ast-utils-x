@@ -1,5 +1,5 @@
-import extractValueFromCallExpression from './CallExpression';
-import extractValueFromThisExpression from './ThisExpression';
+import extractValueFromCallExpression from './CallExpression.js';
+import extractValueFromThisExpression from './ThisExpression.js';
 
 function navigate(obj, prop, value) {
   if (value.computed) {

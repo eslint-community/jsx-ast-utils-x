@@ -1,1 +1,1 @@
-module.exports = require('./lib').getLiteralPropValue;
+export { getLiteralPropValue as default } from './src/index.js';
